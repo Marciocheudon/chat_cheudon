@@ -1,0 +1,27 @@
+project_root/
+├── app.py
+├── requirements.txt
+├── data/
+│   ├── personal_data.csv
+│   └── embeddings/
+│       └── embeddings_index.faiss
+├── models/
+│   ├── __init__.py
+│   ├── embedding_model.py
+│   └── ollama_client.py
+├── services/
+│   ├── __init__.py
+│   ├── retrieval_service.py
+│   ├── context_builder.py
+│   └── response_generator.py
+├── utils/
+│   ├── __init__.py
+│   └── helpers.py
+├── configs/
+│   └── config.yaml
+├── logs/
+│   └── app.log
+├── tests/
+│   ├── __init__.py
+│   ├── test_app.py
+│   └── test_services.py
