@@ -32,9 +32,15 @@ async def generate_response(question):
     logging.info("Construindo o contexto...")
     context = await asyncio.to_thread(context_builder.build_context, retrieved_data)
 
-    prompt = f"{context}\n\nPergunta: {question}\nResposta:"
+    prompt = f"""Você é um assistente pessoal que responde perguntas com base nas informações fornecidas. Use estritamente o contexto abaixo para responder à pergunta.
+
+Contexto:
+{context}
+
+Pergunta: {question}
+Resposta:"""
 
     logging.info("Enviando prompt para o Ollama...")
-    response = await ollama_client.get_response(prompt)  # Remova asyncio.to_thread
+    response = await ollama_client.get_response(prompt)
 
     return response
